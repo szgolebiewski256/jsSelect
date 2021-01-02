@@ -1,0 +1,10 @@
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(150deg, #2C3E50 15%, #FD746C 90%);
+    background: -webkit-linear-gradient(150deg, #2C3E50 15%, #FD746C 90%);
+    margin: 0;
+    padding: 10px;
+}
