@@ -1,33 +1,89 @@
+.bold{
+    font-weight: bold;
+}
+
 .select-container{
     display: flex;
     align-items: center;
     position: relative;
     flex-direction: column;
-    transition: all .3s;
     width: 100%;
+    font-size: inherit;
 }
 
 .select-container .select-selected{
     background: #efe;
-    border-radius: 30px;
+    border-radius: 20px;
     display: flex;
     align-items: center;
     flex-direction: row;
     padding: 10px;
+    height: 50px;
     width: 100%;
+    transition: ease-in .3s;
+}
+.select-container .select-selected:hover{
+    cursor: pointer;
+}
+.select-container .select-selected.active-selected{
+    border-radius: 20px 20px 0 0;
+}
+.select-container .select-selected .textSelect{
+    margin-right: 10px;
+}
+.select-container .select-selected::before{
+    content: '';
+    border: solid #707070;
+    border-top-width: medium;
+    border-right-width: medium;
+    border-bottom-width: medium;
+    border-left-width: medium;
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    padding: 4px;
+    transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+    position: absolute;
+    right: 15px;
+    transition: all .3s;
+}
+.select-container .select-selected.active-selected::before{
+    transform: rotate(225deg);
+    -webkit-transform: rotate(225deg);
 }
 
 .select-container .select-item-container{
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
     align-content: center;
+    opacity: 0;
+    transition: ease-in .3s;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    z-index: -10;
+}
+.select-container .select-item-container.active-selected{
+    opacity: 1;
+    z-index: 0;
 }
 
 .select-container .select-item-container .select-item{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     height: 50px;
     padding: 10px;
     background: #efe;
+    width: 100%;
+    border-bottom: 1px solid #B8C2CC;
+}
+.select-container .select-item-container .select-item:hover{
+    cursor: pointer;
+    background: #fafafa;
+}
+.select-container .select-item-container .select-item:last-of-type{
+    border-bottom: none;
+    border-radius: 0 0 20px 20px;
 }
